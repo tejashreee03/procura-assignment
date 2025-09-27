@@ -7,7 +7,6 @@ A microservices backend project using NestJS, Nx, PostgreSQL, and Docker Compose
 - [Prerequisites](#prerequisites)
 - [Installation](#installation)
 - [Usage](#usage)
-- [Notes](#notes)
 
 
 ## Prerequisites
