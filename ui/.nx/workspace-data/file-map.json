@@ -60,16 +60,20 @@
     "projectFileMap": {
       "ui": [
         {
+          "file": ".nx/workspace-data/d/daemon.log",
+          "hash": "17582154939771641804"
+        },
+        {
           "file": ".nx/workspace-data/eslint-2654242865465226088.hash",
-          "hash": "12051275586283714107"
+          "hash": "10208662763655481845"
         },
         {
           "file": ".nx/workspace-data/file-map.json",
-          "hash": "12669686436832573049"
+          "hash": "248845040184683150"
         },
         {
           "file": ".nx/workspace-data/jest-7930610538513362720.hash",
-          "hash": "17950472439361119362"
+          "hash": "15983238734394837714"
         },
         {
           "file": ".nx/workspace-data/playwright-5186013267177752385.hash",
@@ -77,7 +81,7 @@
         },
         {
           "file": ".nx/workspace-data/project-graph.json",
-          "hash": "4891321657924761331"
+          "hash": "7393017224642262797"
         },
         {
           "file": ".nx/workspace-data/source-maps.json",
@@ -93,7 +97,7 @@
         },
         {
           "file": ".nx/workspace-data/vite-15945558699551388381.hash",
-          "hash": "14055690991065436993"
+          "hash": "11038455064572147763"
         },
         {
           "file": ".nx/workspace-data/vite-8410637291831080659.hash",
@@ -223,3 +227,4 @@
     }
   },
   "externalNodesHash": "3244421341483603138"
+}
