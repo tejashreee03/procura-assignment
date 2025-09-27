@@ -1,0 +1,62 @@
+version: '3.9'
+
+services:
+  postgres:
+    image: postgres:15
+    container_name: procura-postgres
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: jayesh@2512
+      POSTGRES_DB: procura
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  products:
+    build:
+      context: .
+      dockerfile: products/Dockerfile
+    environment:
+      DATABASE_URL: postgres://root:jayesh@2512@postgres:5432/procura
+    depends_on:
+      - postgres
+    ports:
+      - "3001:3001"
+
+  orders:
+    build:
+      context: .
+      dockerfile: orders/Dockerfile
+    environment:
+      DATABASE_URL: postgres://root:jayesh@2512@postgres:5432/procura
+    depends_on:
+      - postgres
+      - products
+    ports:
+      - "3002:3002"
+
+  api-gateway:
+    build:
+      context: .
+      dockerfile: api-gateway/Dockerfile
+    environment:
+      PRODUCTS_URL: http://products:3001
+      ORDERS_URL: http://orders:3002
+    depends_on:
+      - products
+      - orders
+    ports:
+      - "3000:3000"
+
+  ui:
+    build:
+      context: .
+      dockerfile: ui/Dockerfile
+    depends_on:
+      - api-gateway
+    ports:
+      - "4200:4200"
+
+volumes:
+  postgres_data:

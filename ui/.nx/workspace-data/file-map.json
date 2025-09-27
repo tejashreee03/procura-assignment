@@ -1,0 +1,225 @@
+{
+  "version": "6.0",
+  "nxVersion": "21.5.3",
+  "pathMappings": {},
+  "nxJsonPlugins": [
+    {
+      "name": "@nx/js/typescript",
+      "options": {
+        "typecheck": {
+          "targetName": "typecheck"
+        },
+        "build": {
+          "targetName": "build",
+          "configName": "tsconfig.lib.json",
+          "buildDepsName": "build-deps",
+          "watchDepsName": "watch-deps"
+        }
+      }
+    },
+    {
+      "name": "@nx/webpack/plugin",
+      "options": {
+        "buildTargetName": "build",
+        "serveTargetName": "serve",
+        "previewTargetName": "preview"
+      }
+    },
+    {
+      "name": "@nx/eslint/plugin",
+      "options": {
+        "targetName": "lint"
+      }
+    },
+    {
+      "name": "@nx/jest/plugin",
+      "options": {
+        "targetName": "test"
+      }
+    },
+    {
+      "name": "@nx/vite/plugin",
+      "options": {
+        "buildTargetName": "build",
+        "testTargetName": "test",
+        "serveTargetName": "serve",
+        "previewTargetName": "preview",
+        "serveStaticTargetName": "serve-static",
+        "typecheckTargetName": "typecheck"
+      }
+    },
+    {
+      "name": "@nx/playwright/plugin",
+      "options": {
+        "targetName": "e2e"
+      }
+    }
+  ],
+  "fileMap": {
+    "nonProjectFiles": [],
+    "projectFileMap": {
+      "ui": [
+        {
+          "file": ".nx/workspace-data/eslint-2654242865465226088.hash",
+          "hash": "12051275586283714107"
+        },
+        {
+          "file": ".nx/workspace-data/file-map.json",
+          "hash": "12669686436832573049"
+        },
+        {
+          "file": ".nx/workspace-data/jest-7930610538513362720.hash",
+          "hash": "17950472439361119362"
+        },
+        {
+          "file": ".nx/workspace-data/playwright-5186013267177752385.hash",
+          "hash": "1389868326933519382"
+        },
+        {
+          "file": ".nx/workspace-data/project-graph.json",
+          "hash": "4891321657924761331"
+        },
+        {
+          "file": ".nx/workspace-data/source-maps.json",
+          "hash": "1758966776441380190"
+        },
+        {
+          "file": ".nx/workspace-data/tsc-2568428459166798129.hash",
+          "hash": "1389868326933519382"
+        },
+        {
+          "file": ".nx/workspace-data/tsconfig-files.hash",
+          "hash": "1877365747087178610"
+        },
+        {
+          "file": ".nx/workspace-data/vite-15945558699551388381.hash",
+          "hash": "14055690991065436993"
+        },
+        {
+          "file": ".nx/workspace-data/vite-8410637291831080659.hash",
+          "hash": "6413951610107891217"
+        },
+        {
+          "file": ".nx/workspace-data/webpack-17957109288680152952.hash",
+          "hash": "1389868326933519382"
+        },
+        {
+          "file": "Dockerfile",
+          "hash": "11364721867453405025"
+        },
+        {
+          "file": "eslint.config.js",
+          "hash": "6898695751728726704"
+        },
+        {
+          "file": "index.html",
+          "hash": "14811567025961649696"
+        },
+        {
+          "file": "jest.config.ts",
+          "hash": "8114033711965483517"
+        },
+        {
+          "file": "nx.json",
+          "hash": "11191148883597301770"
+        },
+        {
+          "file": "project.json",
+          "hash": "13018522613096967736"
+        },
+        {
+          "file": "public/favicon.ico",
+          "hash": "9303420814833116677"
+        },
+        {
+          "file": "src/app/api/ordersApi.ts",
+          "hash": "2388858721237688409"
+        },
+        {
+          "file": "src/app/api/productsApi.ts",
+          "hash": "15694897846302075197"
+        },
+        {
+          "file": "src/app/app.module.css",
+          "hash": "8887387885984320532"
+        },
+        {
+          "file": "src/app/app.spec.tsx",
+          "hash": "12009626773588878690"
+        },
+        {
+          "file": "src/app/app.tsx",
+          "hash": "5202409771362969011"
+        },
+        {
+          "file": "src/app/components/Card.css",
+          "hash": "3655431257340874260"
+        },
+        {
+          "file": "src/app/components/Navbar.css",
+          "hash": "14739201459204162966"
+        },
+        {
+          "file": "src/app/components/Navbar.tsx",
+          "hash": "1878109522954537874"
+        },
+        {
+          "file": "src/app/components/OrderCard.tsx",
+          "hash": "2412600246840296141"
+        },
+        {
+          "file": "src/app/components/ProductCard.tsx",
+          "hash": "14348835353170845112"
+        },
+        {
+          "file": "src/app/components/modal.tsx",
+          "hash": "10346533250557060733"
+        },
+        {
+          "file": "src/app/nx-welcome.tsx",
+          "hash": "2348102959109701629"
+        },
+        {
+          "file": "src/app/pages/OrdersPage.tsx",
+          "hash": "1961482270662219640"
+        },
+        {
+          "file": "src/app/pages/ProductsPage.tsx",
+          "hash": "884510443454637555"
+        },
+        {
+          "file": "src/assets/.gitkeep",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "src/index.css",
+          "hash": "5813179342659428159"
+        },
+        {
+          "file": "src/main.tsx",
+          "hash": "12789048107402085014"
+        },
+        {
+          "file": "src/styles.css",
+          "hash": "5195668842064076916"
+        },
+        {
+          "file": "tsconfig.app.json",
+          "hash": "17534131638295275382"
+        },
+        {
+          "file": "tsconfig.json",
+          "hash": "548923470133819599"
+        },
+        {
+          "file": "tsconfig.spec.json",
+          "hash": "6810478594055726884"
+        },
+        {
+          "file": "vite.config.ts",
+          "hash": "12759700546130126024"
+        }
+      ]
+    }
+  },
+  "externalNodesHash": "3244421341483603138"

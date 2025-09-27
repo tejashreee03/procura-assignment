@@ -1,0 +1,247 @@
+{
+  "nodes": {
+    "ui": {
+      "name": "ui",
+      "type": "app",
+      "data": {
+        "root": ".",
+        "targets": {
+          "test": {
+            "options": {
+              "cwd": ".",
+              "env": {
+                "TS_NODE_COMPILER_OPTIONS": "{\"moduleResolution\":\"node10\",\"module\":\"commonjs\",\"customConditions\":null}"
+              },
+              "command": "jest"
+            },
+            "metadata": {
+              "technologies": [
+                "jest"
+              ],
+              "description": "Run Jest Tests",
+              "help": {
+                "command": "npx jest --help",
+                "example": {
+                  "options": {
+                    "coverage": true
+                  }
+                }
+              }
+            },
+            "cache": true,
+            "inputs": [
+              "default",
+              "^production",
+              "jest.preset.js",
+              {
+                "externalDependencies": [
+                  "jest"
+                ]
+              }
+            ],
+            "outputs": [
+              "coverage\\ui"
+            ],
+            "executor": "nx:run-commands",
+            "configurations": {},
+            "parallelism": true
+          },
+          "build": {
+            "options": {
+              "cwd": ".",
+              "command": "vite build"
+            },
+            "cache": true,
+            "dependsOn": [
+              "^build"
+            ],
+            "inputs": [
+              "production",
+              "^production",
+              {
+                "externalDependencies": [
+                  "vite"
+                ]
+              }
+            ],
+            "outputs": [
+              "dist\\ui"
+            ],
+            "metadata": {
+              "technologies": [
+                "vite"
+              ],
+              "description": "Run Vite build",
+              "help": {
+                "command": "npx vite build --help",
+                "example": {
+                  "options": {
+                    "sourcemap": true,
+                    "manifest": "manifest.json"
+                  }
+                }
+              }
+            },
+            "executor": "nx:run-commands",
+            "configurations": {},
+            "parallelism": true
+          },
+          "serve": {
+            "continuous": true,
+            "options": {
+              "cwd": ".",
+              "command": "vite"
+            },
+            "metadata": {
+              "technologies": [
+                "vite"
+              ],
+              "description": "Starts Vite dev server",
+              "help": {
+                "command": "npx vite --help",
+                "example": {
+                  "options": {
+                    "port": 3000
+                  }
+                }
+              },
+              "deprecated": "Use devTargetName instead. This option will be removed in Nx 22."
+            },
+            "executor": "nx:run-commands",
+            "configurations": {},
+            "parallelism": true
+          },
+          "dev": {
+            "continuous": true,
+            "options": {
+              "cwd": ".",
+              "command": "vite"
+            },
+            "metadata": {
+              "technologies": [
+                "vite"
+              ],
+              "description": "Starts Vite dev server",
+              "help": {
+                "command": "npx vite --help",
+                "example": {
+                  "options": {
+                    "port": 3000
+                  }
+                }
+              }
+            },
+            "executor": "nx:run-commands",
+            "configurations": {},
+            "parallelism": true
+          },
+          "preview": {
+            "continuous": true,
+            "dependsOn": [
+              "build"
+            ],
+            "options": {
+              "cwd": ".",
+              "command": "vite preview"
+            },
+            "metadata": {
+              "technologies": [
+                "vite"
+              ],
+              "description": "Locally preview Vite production build",
+              "help": {
+                "command": "npx vite preview --help",
+                "example": {
+                  "options": {
+                    "port": 3000
+                  }
+                }
+              }
+            },
+            "executor": "nx:run-commands",
+            "configurations": {},
+            "parallelism": true
+          },
+          "serve-static": {
+            "continuous": true,
+            "executor": "@nx/web:file-server",
+            "options": {
+              "buildTarget": "build",
+              "spa": true
+            },
+            "configurations": {},
+            "parallelism": true
+          },
+          "typecheck": {
+            "cache": true,
+            "inputs": [
+              "production",
+              "^production",
+              {
+                "externalDependencies": [
+                  "typescript"
+                ]
+              }
+            ],
+            "options": {
+              "cwd": ".",
+              "command": "tsc --noEmit -p tsconfig.app.json"
+            },
+            "metadata": {
+              "description": "Runs type-checking for the project.",
+              "technologies": [
+                "typescript"
+              ],
+              "help": {
+                "command": "npx tsc -p tsconfig.app.json --help",
+                "example": {
+                  "options": {
+                    "noEmit": true
+                  }
+                }
+              }
+            },
+            "executor": "nx:run-commands",
+            "configurations": {},
+            "parallelism": true
+          },
+          "build-deps": {
+            "dependsOn": [
+              "^build"
+            ],
+            "configurations": {},
+            "options": {},
+            "parallelism": true,
+            "executor": "nx:noop"
+          },
+          "watch-deps": {
+            "continuous": true,
+            "dependsOn": [
+              "build-deps"
+            ],
+            "executor": "nx:run-commands",
+            "options": {
+              "command": "npx nx watch --projects ui --includeDependentProjects -- npx nx build-deps ui"
+            },
+            "configurations": {},
+            "parallelism": true
+          }
+        },
+        "projectType": "application",
+        "metadata": {},
+        "name": "ui",
+        "$schema": "../node_modules/nx/schemas/project-schema.json",
+        "sourceRoot": "ui/src",
+        "tags": [],
+        "implicitDependencies": []
+      }
+    }
+  },
+  "externalNodes": {},
+  "dependencies": {
+    "ui": []
+  },
+  "version": "6.0",
+  "errors": [],
+  "computedAt": 1758962618584
+}
